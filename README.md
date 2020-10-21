@@ -3,6 +3,9 @@
 An OpenSCAD program that generates a 3D printable cryptocurrency wallet that looks like an actual coin. It's the unholy combination of Bitcoin paper wallets and those stock photos you see in news articles.
 
 
+## What does it look like?
+<img src="https://i.imgur.com/h2Kpj9H.jpg" width=200>
+
 ## How can I make one?
 
 First and foremost: AT YOUR OWN RISK. This software comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law. Do not count on this wallet to offer any form of protection for your digital assets.
