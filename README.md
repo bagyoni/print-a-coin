@@ -19,7 +19,9 @@ You could use any other monospaced font of your choice, but then you'll have to 
 
 You can create a new physical wallet via the following command:
 
+```
 openscad -D "privateKey=\"$PRIVATE_KEY\"; obverseImage=\"$IMAGE_FILENAME\";" -o wallet.stl wallet.scad
+```
 
 Here, $PRIVATE_KEY stands for the private key of the wallet in your preferred format. The 3D wallet can store a maximum of 66 characters, which should be more than enough for both WIF and BIP 38 strings.
 
