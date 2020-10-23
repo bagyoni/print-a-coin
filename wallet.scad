@@ -85,13 +85,13 @@ module coin_reverse() {
 
 module support() {
 	supportWidth = 30;
-	supportThickness = 0.6;
-	linear_extrude(supportThickness)
-	translate([-supportWidth / 2, -coinNetThickness, 0])
-	square([supportWidth, coinNetThickness]);
-	linear_extrude(coinDiameter / 3)
-	translate([-supportWidth / 2, -coinNetThickness, 0])
-	square([supportWidth, supportThickness]);
+	supportThickness = 0.5;
+	linear_extrude(coinDiameter / 3) {
+		translate([-supportWidth / 2, -coinNetThickness, 0])
+		square([supportWidth, supportThickness]);
+		translate([-supportWidth / 2, -supportThickness, 0])
+		square([supportWidth, supportThickness]);
+	}
 }
 
 translate([0, 0, coinDiameter / 2])
