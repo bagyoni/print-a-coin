@@ -54,7 +54,7 @@ module perforation() {
 	holeDepth = coinRim - 0.4;
 	holeCurvature = 7;
 	translate([0, 0, sealThickness])
-	for (i = [1 : holes - 1]) {
+	for (i = [2 : holes - 2]) {
 		rotate([0, 0, i * 360 / holes - 90])
 		translate([coinDiameter / 2 + holeCurvature - holeDepth, 0, 0])
 		cylinder(r = holeCurvature, h = pocketDepth - sealThickness);
