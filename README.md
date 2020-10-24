@@ -32,6 +32,8 @@ $IMAGE_FILENAME should be a (relative or absolute) path pointing to the icon of 
 
 Next, slice wallet.stl and print it. My own setup is: PLA, 20% infill, 0.1mm layer height, 0.4mm nozzle, brim. After it is printed, carefully remove the support structure and **sign the reverse of the coin** with a permanent marker. I recommend that you print two copies with the exact same configuration so you can open up one of them, check that the private key is legible, then safely destroy it.
 
+If you don't like the support included in the model, you can put `nosupport=true;` right before `privateKey` in the above command, and the support will be omitted.
+
 
 ## Okay, I made one, how do I spend it?
 

@@ -16,6 +16,7 @@ textOffset = [13.5, 7, pocketDepth];
 textDepth = 0.7;
 sealThickness = 1;
 obverseThickness = 3;
+nosupport=false;
 epsilon = 0.1;
 
 function _str_concat(strings, count) =
@@ -100,4 +101,8 @@ rotate([90, 0, 0]) {
 	coin_reverse();
 	coin_obverse();
 }
-support();
+if (nosupport) {
+	echo("Support will not be added.");
+} else {
+	support();
+}
