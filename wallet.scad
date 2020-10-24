@@ -16,6 +16,7 @@ textOffset = [13.5, 7, pocketDepth];
 textDepth = 0.7;
 sealThickness = 1;
 obverseThickness = 3;
+nosupport=false;
 epsilon = 0.1;
 
 function _str_concat(strings, count) =
@@ -54,7 +55,7 @@ module perforation() {
 	holeDepth = coinRim - 0.4;
 	holeCurvature = 7;
 	translate([0, 0, sealThickness])
-	for (i = [1 : holes - 1]) {
+	for (i = [2 : holes - 2]) {
 		rotate([0, 0, i * 360 / holes - 90])
 		translate([coinDiameter / 2 + holeCurvature - holeDepth, 0, 0])
 		cylinder(r = holeCurvature, h = pocketDepth - sealThickness);
@@ -85,9 +86,13 @@ module coin_reverse() {
 
 module support() {
 	supportWidth = 30;
-	linear_extrude(0.7)
-	translate([-supportWidth / 2, -coinNetThickness, 0])
-	square([supportWidth, coinNetThickness]);
+	supportThickness = 0.5;
+	linear_extrude(coinDiameter / 3) {
+		translate([-supportWidth / 2, -coinNetThickness, 0])
+		square([supportWidth, supportThickness]);
+		translate([-supportWidth / 2, -supportThickness, 0])
+		square([supportWidth, supportThickness]);
+	}
 }
 
 translate([0, 0, coinDiameter / 2])
@@ -96,4 +101,8 @@ rotate([90, 0, 0]) {
 	coin_reverse();
 	coin_obverse();
 }
-support();
+if (nosupport) {
+	echo("Support will not be added.");
+} else {
+	support();
+}
